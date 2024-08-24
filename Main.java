@@ -28,7 +28,29 @@ public class Main {
         studentList.insertLast(s9);
         studentList.insertLast(s10);
 
-        // Traverse and print the list
-        studentList.traverseList();
+        // Convert the list to an array for sorting
+        Students[] studentArray = new Students[studentList.listSize()];
+        for (int i = 0; i < studentList.listSize(); i++) {
+            studentArray[i] = studentList.retrieveList(i);
+        }
+
+        // Sort the students by grade
+        Sort.bubbleSort(studentArray);
+
+        // Display the sorted list
+        System.out.printf("%-15s %-15s %-10s %-10s\n", "ID Number", "Name", "Gender", "Grade");
+        System.out.println("------------------------------------------------------------");
+        for (Students s : studentArray) {
+            System.out.printf("%-15s %-15s %-10s %-10s \n", s.getStudentNumber(), s.getName(), s.getGender(), s.getGrade());
+        }
+
+        // Perform binary search for a specific grade
+        String targetGrade = "B";
+        int index = Search.binarySearch(studentArray, targetGrade);
+        if (index != -1) {
+            System.out.println("Student with grade " + targetGrade + " found: " + studentArray[index]);
+        } else {
+            System.out.println("Student with grade " + targetGrade + " not found.");
+        }
     }
 }
