@@ -13,5 +13,4 @@ public class Search {
         }
         return -1; // Grade not found
     }
-    
 }
