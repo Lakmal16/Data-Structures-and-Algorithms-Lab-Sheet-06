@@ -75,7 +75,7 @@ public class List {
         }
     }
 
-    public void traverseList() {
+    public  void traverseList() {
         if (isListEmpty()) {
             System.out.println("Empty list");
         } else {

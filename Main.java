@@ -38,11 +38,11 @@ public class Main {
         Sort.bubbleSort(studentArray);
 
         // Display the sorted list
-        System.out.printf("%-15s %-15s %-10s %-10s\n", "ID Number", "Name", "Gender", "Grade");
-        System.out.println("------------------------------------------------------------");
-        for (Students s : studentArray) {
-            System.out.printf("%-15s %-15s %-10s %-10s \n", s.getStudentNumber(), s.getName(), s.getGender(), s.getGrade());
-        }
+        studentList.traverseList();
+
+        Sort.selectionSort(studentArray);
+
+
 
         // Perform binary search for a specific grade
         String targetGrade = "B";
